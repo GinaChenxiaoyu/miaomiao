@@ -1,13 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './stores'
+import store from './store'
 
 import axios from 'axios'
 Vue.prototype.axios=axios;
 
 Vue.filter('setWH',(url,arg)=>url.replace(/w\.h/,arg));
-Vue.config.productionTip = false
+import Scroller from '@/components/Scroller'
+//全局注册组件
+Vue.component('Scroller',Scroller);
+
+import Loading from '@/components/Loading';
+Vue.component('Loading',Loading);
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
