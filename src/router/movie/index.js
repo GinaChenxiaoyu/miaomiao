@@ -22,5 +22,27 @@ export default {
       path:'search',
       component:()=>import('@/components/Search')
     },
+    {
+      path:'detail/1/:movieId',
+      //命名路由component需要加s
+      components:{
+        default:()=>import('@/components/NowPlaying'),
+        detail:()=>import('@/views/Movie/detail')
+      },
+      props:{
+        detail:true
+      }
+    },
+    {
+      path:'detail/2/:movieId',
+      //命名路由component需要加s
+      components:{
+        default:()=>import('@/components/ComingSoon'),
+        detail:()=>import('@/views/Movie/detail')
+      },
+      props:{
+        detail:true
+      }
+    }
   ]
 }
